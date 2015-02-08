@@ -1,0 +1,26 @@
+{
+  "name": "meme-marketplace",
+  "version": "0.0.1",
+  "description": "A sample marketplace app for Memes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+	"pg": "4.x",
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mello151/meme-marketplace"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

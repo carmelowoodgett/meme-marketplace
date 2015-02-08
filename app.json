@@ -1,0 +1,7 @@
+{
+  "name": "Meme Marketplace",
+  "description": "A marketplace for Memes",
+  "repository": "https://github.com/mello151/meme-marketplace",
+  "logo": "",
+  "keywords": ["node", "express", "static"]
+}
