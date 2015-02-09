@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF=8"/>
+		<title>Meme Marketplace</title>
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="js/libs/bootstrap/dist/css/bootstrap.css">
+	</head>
+	<body >
+		<script type="text/x-handlebars" data-template-name="application">
+			<header class="navbar navbar-default"> 
+				<ul class="nav navbar-nav navbar-left">
+					{{#link-to 'index' class="navbar-brand" tagName="li"}}Home{{/link-to}}
+					{{#link-to 'memes' class="navbar-brand" tagName="li"}}Products{{/link-to}}
+					{{#link-to 'upload' class="navbar-brand" tagName="li"}}Upload{{/link-to}}
+					<!-- TODO: Show 'Logout' if user is currentl logged in -->
+					{{#link-to 'login' class="navbar-brand" tagName="li"}} Login{{/link-to}}
+				</ul>
+			</header>
+			<div class="container"> {{outlet}} </div>
+			<footer></footer>
+
+		</script>
+
+		<script type="text/x-handlebars" data-template-name="login">
+		<h2 class="login">Login</h2>
+		<form {{action "login" method="post" on="submit" }} style="text-align: center"> 
+			<div class="form-group">
+				<label for="username">Username</label> 
+				{{ input type="text" name="username" required="true"}}
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				{{ input type="password" name="password"required="true"}}
+			</div>
+			<div style="text-align: center"><button type="submit" name="loginBtn" style="text-align: center" class="btn btn-default">Login</button></div>
+		</form>
+		</script>
+
+		<script type="text/x-handlebars" data-template-name="memes">
+			<table class="table table-hover">
+				<thead><tr><th>Preview</th><th>Name</th><th>Description</th><th>Price</th></tr></thead>
+				<tbody >
+					{{#each meme in model}}
+						<tr>
+							<td><img {{bind-attr src="meme.image" }} height="42" width="42" alt="image" /></td>
+							<td>{{meme.name}}</td>
+							<td>{{meme.desc}}</td>
+							<td>{{meme.price}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+
+		</script>
+		<script type="text/x-handlebars" data-template-name="upload">
+			<form {{ action "" on="submit" }}>
+			<div name="meme-create" class="form-group">
+				<p><input type="text" name="name" placeholder="Name..."/></p>
+				<p><input type="text" name="desc" placeholder="Description..."/></p>
+				<p><input type="file" name="image"/></p>
+				<p><button name="saveMeme" class="btn btn-default">Save</button></p>
+			</div>
+			</form>
+		</script>
+
+		<script type="text/x-handlebars" data-template-name="index">
+			<h1 class="welcome">Welcome to the Meme Marketplace!</h1>
+		</script>
+
+		<script src="js/libs/jquery/jquery.js"></script>
+		<script src="js/libs/handlebars/handlebars.js"></script>
+		<script src="js/libs/ember/ember.debug.js"></script>
+		<script src="js/libs/ember-data/ember-data.js"></script>
+		<script src="js/libs/ember/ember-template-compiler.js"></script>
+		<script src="js/application.js"></script>
+		<script src="js/router.js"></script>
+		<script src="js/models/meme.js"></script>
+		<script src="js/controllers/meme_controller.js"></script>
+	</body>
+</html>

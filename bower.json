@@ -1,0 +1,13 @@
+{
+  "name": "Meme Marketplace",
+  "version": "0.0.1",
+  "dependencies": {
+    "ember": "~1.6",
+    "ember-data": "~1.0.0-beta.8",
+    "jquery": "2.0",
+	"bootstrap": null
+  },
+  "resolutions": {
+    "ember": ">= 1.8.1 < 2.0.0"
+  }
+}
