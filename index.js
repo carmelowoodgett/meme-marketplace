@@ -21,7 +21,17 @@ app.get('/db', function(request, response) {
 });
 
 app.get('/', function(request, response) {
-  response.send("Let's sell some stuff!");
+  //response.send("Let's sell some stuff!");
+  response.sendFile(__dirname+'/index.html');
+});
+
+app.get('/login', function(request, response) {
+	response.send("OK...");
+});
+
+app.post('/login', function(request, response) {
+	console.log("someone's trying to login");
+	response.send("keep a knockin'");
 });
 
 app.listen(app.get('port'), function() {

@@ -4,11 +4,13 @@
   "description": "A sample marketplace app for Memes",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+	"postinstall": "bower install"
   },
   "dependencies": {
 	"pg": "4.x",
-    "express": "~4.9.x"
+    "express": "~4.9.x",
+	"bower": "latest"
   },
   "engines": {
     "node": "0.10.x"
